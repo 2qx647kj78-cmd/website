@@ -132,10 +132,10 @@ function UseCaseItem({
       animate={isInView ? 'visible' : 'hidden'}
       className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center lg:items-stretch`}
     >
-      {/* Visual Section - Apple Style (minimal) */}
+      {/* Visual Section - Anthropic Style */}
       <motion.div variants={itemVariants} className="flex-1 w-full">
-        <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl bg-surface-gray overflow-hidden border border-neutral-300 flex items-center justify-center">
-          <div className="text-neutral-400">
+        <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl bg-anthropic-orange-light overflow-hidden border border-neutral-200 flex items-center justify-center shadow-sm">
+          <div className="text-anthropic-orange">
             {useCase.icons[0]}
           </div>
         </div>
@@ -146,44 +146,45 @@ function UseCaseItem({
         variants={itemVariants}
         className="flex-1 w-full flex flex-col justify-center"
       >
-        {/* Badge - Apple Style */}
+        {/* Badge - Anthropic Style */}
         <motion.div
           variants={itemVariants}
           className="inline-flex w-fit mb-4"
         >
-          <span className="text-sm font-normal text-neutral-600 uppercase tracking-wider">
+          <span className="text-sm text-anthropic-orange uppercase tracking-wider font-medium">
             {useCase.tag}
           </span>
         </motion.div>
 
-        {/* Headline - Apple Style */}
+        {/* Headline - Anthropic Style */}
         <motion.h3
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-semibold text-foreground mb-4 leading-tight tracking-tight"
+          className="text-4xl md:text-5xl font-serif font-normal text-foreground mb-4 leading-tight"
         >
           {useCase.headline}
         </motion.h3>
 
-        {/* Description - Apple Style */}
+        {/* Description - Anthropic Style */}
         <motion.p
           variants={itemVariants}
-          className="text-xl text-neutral-600 mb-8 leading-relaxed font-normal"
+          className="text-xl text-neutral-600 mb-8 leading-relaxed"
         >
           {useCase.description}
         </motion.p>
 
-        {/* Features List - Apple Style */}
+        {/* Features List - Anthropic Style */}
         <motion.ul
           variants={containerVariants}
-          className="space-y-2"
+          className="space-y-3"
         >
           {useCase.features.map((feature, idx) => (
             <motion.li
               key={idx}
               variants={itemVariants}
-              className="text-lg text-neutral-600 font-normal"
+              className="flex items-start gap-2 text-lg text-neutral-700"
             >
-              • {feature}
+              <span className="text-anthropic-orange mt-1">•</span>
+              <span>{feature}</span>
             </motion.li>
           ))}
         </motion.ul>
@@ -213,7 +214,7 @@ export default function UseCases() {
     <section
       id="use-cases"
       ref={sectionRef}
-      className="py-24 md:py-32 bg-white"
+      className="py-24 md:py-32 bg-surface-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -234,13 +235,13 @@ export default function UseCases() {
         >
           <motion.h2
             variants={titleVariants}
-            className="text-5xl md:text-6xl font-semibold text-foreground mb-6 tracking-tight"
+            className="text-5xl md:text-6xl font-serif font-normal text-foreground mb-6 tracking-tight"
           >
             Wie wir helfen
           </motion.h2>
           <motion.p
             variants={titleVariants}
-            className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal"
+            className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
           >
             Praxiserprobte Lösungen für echte Geschäftsherausforderungen
           </motion.p>

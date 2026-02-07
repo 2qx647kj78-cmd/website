@@ -14,7 +14,7 @@
   }
 
   ::selection {
-    @apply bg-apple-blue/20 text-foreground;
+    @apply bg-anthropic-orange/20 text-foreground;
   }
 }
 

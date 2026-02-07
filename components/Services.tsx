@@ -69,7 +69,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="leistungen" className="py-24 md:py-32 bg-white">
+    <section id="leistungen" className="py-24 md:py-32 bg-surface-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -79,10 +79,10 @@ export default function Services() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-semibold text-foreground mb-4 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-serif font-normal text-foreground mb-4 tracking-tight">
             Unsere Leistungen
           </h2>
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal leading-relaxed">
             Maßgeschneiderte Lösungen für jede Herausforderung
           </p>
         </motion.div>
@@ -99,30 +99,31 @@ export default function Services() {
               key={index}
               variants={cardVariants}
               className={cn(
-                'relative bg-surface-light rounded-2xl p-10',
-                'hover:shadow-lg hover:shadow-black/5',
+                'relative bg-surface-cream rounded-2xl p-10',
+                'hover:shadow-lg hover:shadow-anthropic-orange/10',
                 'transition-all duration-300 ease-out',
-                'border border-neutral-300'
+                'border border-neutral-200'
               )}
             >
-              {/* Headline - Apple Style */}
-              <h3 className="text-3xl font-semibold text-foreground mb-3 tracking-tight">
+              {/* Headline - Anthropic Style */}
+              <h3 className="text-3xl font-serif font-normal text-foreground mb-4">
                 {service.headline}
               </h3>
 
-              {/* Description - Apple Style */}
-              <p className="text-lg text-neutral-600 mb-8 leading-relaxed font-normal">
+              {/* Description - Anthropic Style */}
+              <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
                 {service.description}
               </p>
 
-              {/* Features - Apple Style (simple list) */}
-              <ul className="space-y-2">
+              {/* Features - Anthropic Style */}
+              <ul className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="text-base text-neutral-600 font-normal"
+                    className="flex items-start gap-2 text-base text-neutral-700"
                   >
-                    • {feature}
+                    <span className="text-anthropic-orange mt-1">•</span>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>

@@ -64,9 +64,9 @@ export default function ContactForm() {
       id="kontakt"
       className="relative min-h-screen py-24 md:py-32 overflow-hidden"
     >
-      {/* Apple-style background */}
+      {/* Anthropic-style background */}
       <div
-        className="absolute inset-0 bg-surface-gray pointer-events-none"
+        className="absolute inset-0 bg-background pointer-events-none"
         aria-hidden="true"
       />
 
@@ -80,10 +80,10 @@ export default function ContactForm() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-semibold text-foreground mb-4 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-serif font-normal text-foreground mb-4 tracking-tight">
             Bereit durchzustarten?
           </h2>
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
             Lassen Sie uns in einem kostenlosen Beratungsgespräch herausfinden,
             wie AI Ihr Business transformieren kann.
           </p>
@@ -99,7 +99,7 @@ export default function ContactForm() {
         >
           {!isSubmitted ? (
             // Contact Form
-            <div className="bg-white border border-neutral-300 rounded-2xl p-8 md:p-10">
+            <div className="bg-surface-white border border-neutral-200 rounded-2xl p-8 md:p-10 shadow-sm">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name Field */}
                 <div>
@@ -111,7 +111,7 @@ export default function ContactForm() {
                     type="text"
                     id="name"
                     placeholder="Ihr Name"
-                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-anthropic-orange focus:ring-2 focus:ring-anthropic-orange/20 transition-all outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -128,7 +128,7 @@ export default function ContactForm() {
                     type="email"
                     id="email"
                     placeholder="ihre.email@beispiel.de"
-                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-anthropic-orange focus:ring-2 focus:ring-anthropic-orange/20 transition-all outline-none"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
@@ -146,7 +146,7 @@ export default function ContactForm() {
                   <select
                     {...register('companyType')}
                     id="companyType"
-                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none appearance-none cursor-pointer"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground focus:border-anthropic-orange focus:ring-2 focus:ring-anthropic-orange/20 transition-all outline-none appearance-none cursor-pointer"
                   >
                     <option value="" disabled>
                       Bitte wählen Sie...
@@ -171,18 +171,18 @@ export default function ContactForm() {
                     id="message"
                     placeholder="Erzählen Sie uns von Ihren AI-Anforderungen (optional)"
                     rows={4}
-                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none resize-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-anthropic-orange focus:ring-2 focus:ring-anthropic-orange/20 transition-all outline-none resize-none"
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
-                {/* Submit Button - Apple Style */}
+                {/* Submit Button - Anthropic Style */}
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-apple-blue text-white hover:bg-apple-blue-hover disabled:bg-neutral-300 disabled:text-neutral-500 font-normal text-lg py-3 px-6 rounded-full transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-75"
+                  className="w-full bg-anthropic-orange text-white hover:bg-anthropic-orange-hover disabled:bg-neutral-300 disabled:text-neutral-500 font-medium text-lg py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-75 shadow-lg shadow-anthropic-orange/20 hover:shadow-xl hover:shadow-anthropic-orange/30"
                 >
                   {isLoading ? (
                     <>
@@ -204,7 +204,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="bg-white border border-neutral-300 rounded-2xl p-8 md:p-10 text-center"
+              className="bg-surface-white border border-neutral-200 rounded-2xl p-8 md:p-10 text-center shadow-sm"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -212,14 +212,14 @@ export default function ContactForm() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="flex justify-center mb-6"
               >
-                <CheckCircle className="w-16 h-16 text-apple-blue" />
+                <CheckCircle className="w-16 h-16 text-anthropic-orange" />
               </motion.div>
 
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-3xl md:text-4xl font-semibold text-foreground mb-3 tracking-tight"
+                className="text-3xl md:text-4xl font-serif font-normal text-foreground mb-3"
               >
                 Vielen Dank!
               </motion.h3>
@@ -228,7 +228,7 @@ export default function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-xl text-neutral-600 mb-8 font-normal"
+                className="text-xl text-neutral-600 mb-8 leading-relaxed"
               >
                 Wir melden uns innerhalb von 24 Stunden bei Ihnen.
               </motion.p>
@@ -238,7 +238,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 onClick={handleReset}
-                className="bg-apple-blue text-white hover:bg-apple-blue-hover font-normal text-lg py-3 px-8 rounded-full transition-colors duration-200"
+                className="bg-anthropic-orange text-white hover:bg-anthropic-orange-hover font-medium text-lg py-3 px-8 rounded-xl transition-all duration-200 shadow-lg shadow-anthropic-orange/20"
               >
                 Weitere Anfrage senden
               </motion.button>

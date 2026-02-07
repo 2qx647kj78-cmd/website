@@ -9,38 +9,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Apple.com inspired color palette
-        background: "#F5F5F7", // Apple's light background
-        foreground: "#1D1D1F", // Apple's primary text color
+        // Anthropic.com inspired color palette
+        background: "#FBF7ED", // Warm cream background
+        foreground: "#1C1B16", // Dark brown text
 
-        // Apple surfaces
+        // Anthropic surfaces
         surface: {
-          light: "#FBFBFD",
-          gray: "#F5F5F7",
-          dark: "#E8E8ED",
+          cream: "#FBF7ED",
+          "cream-dark": "#F4EFE0",
+          white: "#FFFFFF",
+          orange: "#FFF4ED",
         },
 
-        // Apple blue (primary action color)
-        apple: {
-          blue: "#0071E3",
-          "blue-hover": "#0077ED",
+        // Anthropic orange (primary action color)
+        anthropic: {
+          orange: "#F4845F",
+          "orange-hover": "#E9734F",
+          "orange-light": "#FFF4ED",
         },
 
-        // Neutral grays (Apple style)
+        // Warm neutrals (Anthropic style)
         neutral: {
           50: "#FFFFFF",
-          100: "#FBFBFD",
-          200: "#F5F5F7",
-          300: "#E8E8ED",
-          400: "#D2D2D7",
-          500: "#86868B",
-          600: "#6E6E73",
-          700: "#1D1D1F",
-          800: "#000000",
+          100: "#FBF7ED",
+          200: "#F4EFE0",
+          300: "#E8E3D4",
+          400: "#C8C3B4",
+          500: "#8B8679",
+          600: "#6E6A5E",
+          700: "#1C1B16",
+          800: "#0D0C09",
         },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
       },
       borderRadius: {
         xl: "12px",

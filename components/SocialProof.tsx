@@ -51,11 +51,11 @@ const AnimatedCounter = ({ target, label, suffix }: CounterProps) => {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center"
     >
-      <div className="text-5xl md:text-6xl font-semibold text-foreground">
+      <div className="text-5xl md:text-6xl font-serif font-normal text-anthropic-orange">
         {count}
         {suffix}
       </div>
-      <p className="text-neutral-600 text-xl mt-3 font-normal">{label}</p>
+      <p className="text-neutral-600 text-xl mt-3">{label}</p>
     </motion.div>
   );
 };
@@ -73,9 +73,9 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true, margin: '-100px' }}
-      className="bg-white rounded-2xl p-10 flex flex-col h-full border border-neutral-300"
+      className="bg-surface-white rounded-2xl p-10 flex flex-col h-full border border-neutral-200 shadow-sm"
     >
-      <p className="text-xl text-foreground leading-relaxed mb-6 flex-grow font-normal">
+      <p className="text-xl text-neutral-700 leading-relaxed mb-6 flex-grow">
         "{quote}"
       </p>
 
@@ -88,7 +88,7 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
 
 export default function SocialProof() {
   return (
-    <section className="bg-surface-gray py-24 md:py-32">
+    <section className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <motion.div
@@ -98,7 +98,7 @@ export default function SocialProof() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-semibold text-foreground tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-serif font-normal text-foreground tracking-tight">
             Vertraut von innovativen Unternehmen
           </h2>
         </motion.div>

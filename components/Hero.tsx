@@ -48,7 +48,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-surface-gray flex flex-col items-center justify-center px-4">{/* Clean, minimal Apple design - no decorative elements */}
+    <div className="relative min-h-screen overflow-hidden bg-background flex flex-col items-center justify-center px-4">{/* Warm, inviting Anthropic design */}
 
       {/* Content */}
       <motion.div
@@ -57,39 +57,39 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Headline - Apple Style */}
+        {/* Headline - Anthropic Style with Serif */}
         <motion.h1
-          className="text-6xl md:text-8xl font-semibold text-foreground leading-tight mb-4 tracking-tight"
+          className="text-6xl md:text-8xl font-serif font-normal text-foreground leading-tight mb-6 tracking-tight"
           variants={itemVariants}
         >
           AI Solutions
         </motion.h1>
 
-        {/* Subheadline - Apple Style */}
+        {/* Subheadline - Anthropic Style */}
         <motion.p
-          className="text-2xl md:text-3xl text-foreground mb-8 leading-snug max-w-3xl mx-auto font-normal"
+          className="text-xl md:text-2xl text-neutral-600 mb-10 leading-relaxed max-w-3xl mx-auto font-normal"
           variants={itemVariants}
         >
-          Intelligente Automation für moderne Unternehmen.
+          Intelligente Automation und KI-Lösungen, die Ihr Unternehmen voranbringen.
         </motion.p>
 
-        {/* CTA Buttons - Apple Style */}
+        {/* CTA Buttons - Anthropic Style */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
           variants={itemVariants}
         >
-          {/* Primary CTA - Apple Blue Pill Button */}
+          {/* Primary CTA - Anthropic Orange Button */}
           <a
             href="#kontakt"
-            className="inline-flex items-center justify-center px-6 py-3 text-lg font-normal text-white bg-apple-blue hover:bg-apple-blue-hover rounded-full transition-colors duration-200 min-w-[200px]"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-anthropic-orange hover:bg-anthropic-orange-hover rounded-xl transition-all duration-200 shadow-lg shadow-anthropic-orange/20 hover:shadow-xl hover:shadow-anthropic-orange/30"
           >
-            Weitere Infos
+            Kostenlose Beratung
           </a>
 
-          {/* Secondary CTA - Outlined Pill Button */}
+          {/* Secondary CTA - Outlined Button */}
           <a
             href="#use-cases"
-            className="inline-flex items-center justify-center px-6 py-3 text-lg font-normal text-apple-blue border-2 border-apple-blue hover:bg-apple-blue hover:text-white rounded-full transition-colors duration-200 min-w-[200px]"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-foreground border-2 border-neutral-300 hover:border-foreground rounded-xl transition-all duration-200"
           >
             Projekte ansehen
           </a>
