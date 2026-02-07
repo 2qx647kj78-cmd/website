@@ -111,7 +111,7 @@ export default function ContactForm() {
                     type="text"
                     id="name"
                     placeholder="Ihr Name"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all outline-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -128,7 +128,7 @@ export default function ContactForm() {
                     type="email"
                     id="email"
                     placeholder="ihre.email@beispiel.de"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all outline-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
@@ -146,7 +146,7 @@ export default function ContactForm() {
                   <select
                     {...register('companyType')}
                     id="companyType"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all outline-none appearance-none cursor-pointer"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none appearance-none cursor-pointer"
                   >
                     <option value="" disabled>
                       Bitte wählen Sie...
@@ -171,7 +171,7 @@ export default function ContactForm() {
                     id="message"
                     placeholder="Erzählen Sie uns von Ihren AI-Anforderungen (optional)"
                     rows={4}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all outline-none resize-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none resize-none"
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>

@@ -14,7 +14,7 @@
   }
 
   ::selection {
-    @apply bg-accent-purple/20 text-foreground;
+    @apply bg-ios-blue/20 text-foreground;
   }
 }
 
