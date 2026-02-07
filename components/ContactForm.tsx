@@ -64,9 +64,9 @@ export default function ContactForm() {
       id="kontakt"
       className="relative min-h-screen py-24 md:py-32 overflow-hidden"
     >
-      {/* Colorful iOS background */}
+      {/* Apple-style background */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-ios-indigo via-ios-purple to-ios-pink pointer-events-none"
+        className="absolute inset-0 bg-surface-gray pointer-events-none"
         aria-hidden="true"
       />
 
@@ -80,10 +80,10 @@ export default function ContactForm() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Bereit für die KI-Revolution?
+          <h2 className="text-5xl md:text-6xl font-semibold text-foreground mb-4 tracking-tight">
+            Bereit durchzustarten?
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal">
             Lassen Sie uns in einem kostenlosen Beratungsgespräch herausfinden,
             wie AI Ihr Business transformieren kann.
           </p>
@@ -99,11 +99,11 @@ export default function ContactForm() {
         >
           {!isSubmitted ? (
             // Contact Form
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-10">
+            <div className="bg-white border border-neutral-300 rounded-2xl p-8 md:p-10">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name Field */}
                 <div>
-                  <label htmlFor="name" className="text-gray-200 text-sm font-medium block mb-2">
+                  <label htmlFor="name" className="text-foreground text-base font-normal block mb-2">
                     Name
                   </label>
                   <input
@@ -111,7 +111,7 @@ export default function ContactForm() {
                     type="text"
                     id="name"
                     placeholder="Ihr Name"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -120,7 +120,7 @@ export default function ContactForm() {
 
                 {/* Email Field */}
                 <div>
-                  <label htmlFor="email" className="text-gray-200 text-sm font-medium block mb-2">
+                  <label htmlFor="email" className="text-foreground text-base font-normal block mb-2">
                     E-Mail
                   </label>
                   <input
@@ -128,7 +128,7 @@ export default function ContactForm() {
                     type="email"
                     id="email"
                     placeholder="ihre.email@beispiel.de"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
@@ -139,14 +139,14 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor="companyType"
-                    className="text-gray-200 text-sm font-medium block mb-2"
+                    className="text-foreground text-base font-normal block mb-2"
                   >
                     Unternehmenstyp
                   </label>
                   <select
                     {...register('companyType')}
                     id="companyType"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none appearance-none cursor-pointer"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none appearance-none cursor-pointer"
                   >
                     <option value="" disabled>
                       Bitte wählen Sie...
@@ -163,7 +163,7 @@ export default function ContactForm() {
 
                 {/* Message Field */}
                 <div>
-                  <label htmlFor="message" className="text-gray-200 text-sm font-medium block mb-2">
+                  <label htmlFor="message" className="text-foreground text-base font-normal block mb-2">
                     Nachricht
                   </label>
                   <textarea
@@ -171,18 +171,18 @@ export default function ContactForm() {
                     id="message"
                     placeholder="Erzählen Sie uns von Ihren AI-Anforderungen (optional)"
                     rows={4}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-ios-blue focus:ring-1 focus:ring-ios-blue transition-all outline-none resize-none"
+                    className="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-foreground placeholder-neutral-400 focus:border-apple-blue focus:ring-2 focus:ring-apple-blue/20 transition-all outline-none resize-none"
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - Apple Style */}
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-white text-ios-indigo hover:bg-white/90 disabled:bg-neutral-300 disabled:text-neutral-500 font-semibold py-3 px-6 rounded-2xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-75 shadow-lg"
+                  className="w-full bg-apple-blue text-white hover:bg-apple-blue-hover disabled:bg-neutral-300 disabled:text-neutral-500 font-normal text-lg py-3 px-6 rounded-full transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-75"
                 >
                   {isLoading ? (
                     <>
@@ -204,31 +204,31 @@ export default function ContactForm() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-10 text-center"
+              className="bg-white border border-neutral-300 rounded-2xl p-8 md:p-10 text-center"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex justify-center mb-4"
+                className="flex justify-center mb-6"
               >
-                <CheckCircle className="w-16 h-16 text-green-400" />
+                <CheckCircle className="w-16 h-16 text-apple-blue" />
               </motion.div>
 
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-2xl md:text-3xl font-bold text-white mb-3"
+                className="text-3xl md:text-4xl font-semibold text-foreground mb-3 tracking-tight"
               >
-                Vielen Dank für Ihre Anfrage!
+                Vielen Dank!
               </motion.h3>
 
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-gray-300 mb-8"
+                className="text-xl text-neutral-600 mb-8 font-normal"
               >
                 Wir melden uns innerhalb von 24 Stunden bei Ihnen.
               </motion.p>
@@ -238,7 +238,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 onClick={handleReset}
-                className="bg-white text-ios-indigo hover:bg-white/90 font-semibold py-3 px-8 rounded-2xl transition-all duration-200 shadow-lg"
+                className="bg-apple-blue text-white hover:bg-apple-blue-hover font-normal text-lg py-3 px-8 rounded-full transition-colors duration-200"
               >
                 Weitere Anfrage senden
               </motion.button>

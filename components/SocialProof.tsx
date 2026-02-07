@@ -51,11 +51,11 @@ const AnimatedCounter = ({ target, label, suffix }: CounterProps) => {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center"
     >
-      <div className="text-5xl md:text-6xl font-bold text-ios-blue">
+      <div className="text-5xl md:text-6xl font-semibold text-foreground">
         {count}
         {suffix}
       </div>
-      <p className="text-neutral-600 text-lg mt-3">{label}</p>
+      <p className="text-neutral-600 text-xl mt-3 font-normal">{label}</p>
     </motion.div>
   );
 };
@@ -73,29 +73,14 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true, margin: '-100px' }}
-      className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-black/5 p-8 flex flex-col h-full border border-neutral-100"
+      className="bg-white rounded-2xl p-10 flex flex-col h-full border border-neutral-300"
     >
-      <div className="flex mb-4">
-        <Quote className="w-8 h-8 text-ios-green flex-shrink-0" />
-      </div>
-
-      <p className="text-gray-700 text-lg leading-relaxed mb-6 flex-grow">
+      <p className="text-xl text-foreground leading-relaxed mb-6 flex-grow font-normal">
         "{quote}"
       </p>
 
-      <div className="flex items-center gap-3 border-t pt-6">
-        <div>
-          <p className="font-semibold text-gray-900">{author}</p>
-        </div>
-      </div>
-
-      <div className="flex gap-1 mt-4">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className="w-5 h-5 fill-amber-400 text-amber-400"
-          />
-        ))}
+      <div className="border-t border-neutral-300 pt-6">
+        <p className="text-base font-normal text-neutral-600">{author}</p>
       </div>
     </motion.div>
   );
@@ -103,7 +88,7 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
 
 export default function SocialProof() {
   return (
-    <section className="bg-surface-mint py-24 md:py-32">
+    <section className="bg-surface-gray py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <motion.div
@@ -113,7 +98,7 @@ export default function SocialProof() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-semibold text-foreground tracking-tight">
             Vertraut von innovativen Unternehmen
           </h2>
         </motion.div>

@@ -132,65 +132,11 @@ function UseCaseItem({
       animate={isInView ? 'visible' : 'hidden'}
       className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center lg:items-stretch`}
     >
-      {/* Visual Section */}
+      {/* Visual Section - Apple Style (minimal) */}
       <motion.div variants={itemVariants} className="flex-1 w-full">
-        <div
-          className={`relative w-full h-[300px] md:h-[400px] rounded-3xl ${useCase.bgColor} overflow-hidden shadow-lg shadow-black/5 border border-${useCase.color}/20`}
-        >
-          {/* Decorative background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className={`absolute top-10 right-10 w-32 h-32 bg-${useCase.color}/10 rounded-full`} />
-            <div className={`absolute bottom-10 left-10 w-40 h-40 bg-${useCase.color}/10 rounded-2xl rotate-12`} />
-          </div>
-
-          {/* Icons arrangement */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* Center large icon */}
-              <motion.div
-                animate={{ y: [0, 20, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                className="absolute"
-              >
-                {useCase.icons[0]}
-              </motion.div>
-
-              {/* Top right icon */}
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                className="absolute top-12 right-12"
-              >
-                {useCase.icons[1]}
-              </motion.div>
-
-              {/* Bottom left icon */}
-              <motion.div
-                animate={{
-                  y: [0, 15, 0],
-                  x: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                className="absolute bottom-12 left-12"
-              >
-                {useCase.icons[2]}
-              </motion.div>
-            </div>
+        <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl bg-surface-gray overflow-hidden border border-neutral-300 flex items-center justify-center">
+          <div className="text-neutral-400">
+            {useCase.icons[0]}
           </div>
         </div>
       </motion.div>
@@ -200,45 +146,44 @@ function UseCaseItem({
         variants={itemVariants}
         className="flex-1 w-full flex flex-col justify-center"
       >
-        {/* Badge */}
+        {/* Badge - Apple Style */}
         <motion.div
           variants={itemVariants}
           className="inline-flex w-fit mb-4"
         >
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white bg-${useCase.color}`}>
+          <span className="text-sm font-normal text-neutral-600 uppercase tracking-wider">
             {useCase.tag}
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline - Apple Style */}
         <motion.h3
           variants={itemVariants}
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"
+          className="text-4xl md:text-5xl font-semibold text-foreground mb-4 leading-tight tracking-tight"
         >
           {useCase.headline}
         </motion.h3>
 
-        {/* Description */}
+        {/* Description - Apple Style */}
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-600 mb-6 leading-relaxed"
+          className="text-xl text-neutral-600 mb-8 leading-relaxed font-normal"
         >
           {useCase.description}
         </motion.p>
 
-        {/* Features List */}
+        {/* Features List - Apple Style */}
         <motion.ul
           variants={containerVariants}
-          className="space-y-3"
+          className="space-y-2"
         >
           {useCase.features.map((feature, idx) => (
             <motion.li
               key={idx}
               variants={itemVariants}
-              className="flex items-start gap-3"
+              className="text-lg text-neutral-600 font-normal"
             >
-              <CheckCircle className={`w-6 h-6 text-${useCase.color} flex-shrink-0 mt-0.5`} />
-              <span className="text-neutral-700 font-medium">{feature}</span>
+              • {feature}
             </motion.li>
           ))}
         </motion.ul>
@@ -268,7 +213,7 @@ export default function UseCases() {
     <section
       id="use-cases"
       ref={sectionRef}
-      className="py-24 md:py-32 bg-surface-lavender"
+      className="py-24 md:py-32 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -289,13 +234,13 @@ export default function UseCases() {
         >
           <motion.h2
             variants={titleVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-6xl font-semibold text-foreground mb-6 tracking-tight"
           >
             Wie wir helfen
           </motion.h2>
           <motion.p
             variants={titleVariants}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal"
           >
             Praxiserprobte Lösungen für echte Geschäftsherausforderungen
           </motion.p>

@@ -9,47 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // iOS 18 inspired color palette
-        background: "#F2F2F7", // iOS light background
-        foreground: "#1C1C1E",
+        // Apple.com inspired color palette
+        background: "#F5F5F7", // Apple's light background
+        foreground: "#1D1D1F", // Apple's primary text color
 
-        // Colorful backgrounds (iOS style)
+        // Apple surfaces
         surface: {
-          cream: "#FFF9F0",
-          mint: "#E8F5F0",
-          sky: "#E8F4F8",
-          lavender: "#F0ECFC",
-          peach: "#FFE8E0",
-          pink: "#FFE8F0",
+          light: "#FBFBFD",
+          gray: "#F5F5F7",
+          dark: "#E8E8ED",
         },
 
-        // iOS 18 vibrant accent colors
-        ios: {
-          blue: "#007AFF",
-          indigo: "#5856D6",
-          purple: "#AF52DE",
-          pink: "#FF2D55",
-          red: "#FF3B30",
-          orange: "#FF9500",
-          yellow: "#FFCC00",
-          green: "#34C759",
-          mint: "#00C7BE",
-          teal: "#30B0C7",
-          cyan: "#32ADE6",
+        // Apple blue (primary action color)
+        apple: {
+          blue: "#0071E3",
+          "blue-hover": "#0077ED",
         },
 
-        // Neutral grays (iOS style)
+        // Neutral grays (Apple style)
         neutral: {
-          50: "#FAFAFA",
-          100: "#F5F5F5",
-          200: "#E5E5E5",
-          300: "#D4D4D4",
-          400: "#A3A3A3",
-          500: "#737373",
-          600: "#525252",
-          700: "#404040",
-          800: "#262626",
-          900: "#171717",
+          50: "#FFFFFF",
+          100: "#FBFBFD",
+          200: "#F5F5F7",
+          300: "#E8E8ED",
+          400: "#D2D2D7",
+          500: "#86868B",
+          600: "#6E6E73",
+          700: "#1D1D1F",
+          800: "#000000",
         },
       },
       fontFamily: {

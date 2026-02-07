@@ -16,17 +16,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-950 text-gray-400">
+    <footer className="bg-foreground text-neutral-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           {/* Left: Company Info */}
           <div className="flex flex-col justify-start">
-            <div className="flex items-center gap-3 mb-3">
-              <h2 className="text-xl font-bold text-white">AI Solutions</h2>
-              <div className="w-2 h-2 rounded-full bg-ios-green"></div>
-            </div>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <h2 className="text-xl font-semibold text-white mb-2">AI Solutions</h2>
+            <p className="text-sm text-neutral-500 leading-relaxed font-normal">
               Intelligente Lösungen für moderne Unternehmen
             </p>
           </div>
@@ -38,7 +35,7 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-neutral-500 hover:text-white transition-colors duration-200 text-sm font-normal"
                 >
                   {link.label}
                 </a>

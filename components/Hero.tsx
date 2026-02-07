@@ -48,11 +48,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-surface-sky via-surface-lavender to-surface-peach flex flex-col items-center justify-center">
-      {/* Decorative shapes (iOS style - sharp, colorful) */}
-      <div className="absolute top-20 right-10 w-32 h-32 bg-ios-orange/20 rounded-3xl rotate-12" />
-      <div className="absolute bottom-32 left-10 w-40 h-40 bg-ios-mint/20 rounded-full" />
-      <div className="absolute top-1/3 left-20 w-24 h-24 bg-ios-pink/20 rounded-2xl -rotate-12" />
+    <div className="relative min-h-screen overflow-hidden bg-surface-gray flex flex-col items-center justify-center px-4">{/* Clean, minimal Apple design - no decorative elements */}
 
       {/* Content */}
       <motion.div
@@ -61,46 +57,41 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Headline */}
+        {/* Headline - Apple Style */}
         <motion.h1
-          className="text-5xl md:text-7xl font-bold text-foreground leading-tight mb-6"
+          className="text-6xl md:text-8xl font-semibold text-foreground leading-tight mb-4 tracking-tight"
           variants={itemVariants}
         >
-          Intelligente Automation.{' '}
-          <span className="text-ios-blue">
-            Messbare Ergebnisse.
-          </span>
+          AI Solutions
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Subheadline - Apple Style */}
         <motion.p
-          className="text-lg md:text-xl text-neutral-700 mb-10 leading-relaxed max-w-2xl mx-auto"
+          className="text-2xl md:text-3xl text-foreground mb-8 leading-snug max-w-3xl mx-auto font-normal"
           variants={itemVariants}
         >
-          Wir entwickeln KI-gestützte Workflows und digitale Lösungen, die Ihr Unternehmen voranbringen.
+          Intelligente Automation für moderne Unternehmen.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Apple Style */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
           variants={itemVariants}
         >
-          {/* Primary CTA */}
+          {/* Primary CTA - Apple Blue Pill Button */}
           <a
             href="#kontakt"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-ios-blue rounded-2xl transition-all duration-300 hover:bg-ios-indigo hover:shadow-xl hover:shadow-ios-blue/30 hover:scale-105"
+            className="inline-flex items-center justify-center px-6 py-3 text-lg font-normal text-white bg-apple-blue hover:bg-apple-blue-hover rounded-full transition-colors duration-200 min-w-[200px]"
           >
-            Kostenlose Beratung buchen
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            Weitere Infos
           </a>
 
-          {/* Secondary CTA */}
+          {/* Secondary CTA - Outlined Pill Button */}
           <a
             href="#use-cases"
-            className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-foreground bg-white/60 backdrop-blur-md rounded-2xl transition-all duration-300 hover:bg-white/80 hover:scale-105"
+            className="inline-flex items-center justify-center px-6 py-3 text-lg font-normal text-apple-blue border-2 border-apple-blue hover:bg-apple-blue hover:text-white rounded-full transition-colors duration-200 min-w-[200px]"
           >
-            Unsere Projekte ansehen
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 hover:translate-x-1" />
+            Projekte ansehen
           </a>
         </motion.div>
       </motion.div>

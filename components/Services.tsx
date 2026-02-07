@@ -69,7 +69,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="leistungen" className="py-24 md:py-32 bg-surface-cream">
+    <section id="leistungen" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -77,12 +77,12 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl md:text-6xl font-semibold text-foreground mb-4 tracking-tight">
             Unsere Leistungen
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-normal">
             Maßgeschneiderte Lösungen für jede Herausforderung
           </p>
         </motion.div>
@@ -99,66 +99,33 @@ export default function Services() {
               key={index}
               variants={cardVariants}
               className={cn(
-                'relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-black/5 p-8',
-                'hover:shadow-xl hover:shadow-black/10 hover:-translate-y-2',
+                'relative bg-surface-light rounded-2xl p-10',
+                'hover:shadow-lg hover:shadow-black/5',
                 'transition-all duration-300 ease-out',
-                'border border-neutral-100'
+                'border border-neutral-300'
               )}
             >
-              {/* Icon Container */}
-              <div className="mb-6">
-                <div
-                  className={cn(
-                    'w-16 h-16 rounded-2xl',
-                    service.color,
-                    'flex items-center justify-center',
-                    'text-white shadow-lg shadow-black/10'
-                  )}
-                >
-                  {service.icon}
-                </div>
-              </div>
-
-              {/* Headline */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              {/* Headline - Apple Style */}
+              <h3 className="text-3xl font-semibold text-foreground mb-3 tracking-tight">
                 {service.headline}
               </h3>
 
-              {/* Description */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              {/* Description - Apple Style */}
+              <p className="text-lg text-neutral-600 mb-8 leading-relaxed font-normal">
                 {service.description}
               </p>
 
-              {/* Features */}
-              <div className="space-y-3">
+              {/* Features - Apple Style (simple list) */}
+              <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <div
+                  <li
                     key={featureIndex}
-                    className="flex items-center gap-3"
+                    className="text-base text-neutral-600 font-normal"
                   >
-                    <div className={cn(
-                      "flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center",
-                      service.color,
-                      "bg-opacity-20"
-                    )}>
-                      <svg
-                        className={cn("w-4 h-4", service.color.replace('bg-', 'text-'))}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-medium text-neutral-700">
-                      {feature}
-                    </span>
-                  </div>
+                    • {feature}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </motion.div>
