@@ -22,7 +22,8 @@ interface UseCase {
   description: string;
   features: string[];
   icons: React.ReactNode[];
-  gradient: string;
+  color: string;
+  bgColor: string;
 }
 
 const useCases: UseCase[] = [
@@ -38,11 +39,12 @@ const useCases: UseCase[] = [
       'Automatisches Bestandsmanagement',
     ],
     icons: [
-      <ShoppingCart key="cart" size={48} className="text-white/60" />,
-      <Package key="package" size={48} className="text-white/50" />,
-      <TrendingUp key="trending" size={48} className="text-white/70" />,
+      <ShoppingCart key="cart" size={48} className="text-ios-blue" />,
+      <Package key="package" size={48} className="text-ios-blue/70" />,
+      <TrendingUp key="trending" size={48} className="text-ios-blue/50" />,
     ],
-    gradient: 'from-blue-500 via-blue-600 to-purple-600',
+    color: 'ios-blue',
+    bgColor: 'bg-ios-blue/10',
   },
   {
     id: 'support',
@@ -56,11 +58,12 @@ const useCases: UseCase[] = [
       'Nahtlose Agent-Übergabe',
     ],
     icons: [
-      <MessageSquare key="message" size={48} className="text-white/60" />,
-      <Headphones key="headphones" size={48} className="text-white/50" />,
-      <Users key="users" size={48} className="text-white/70" />,
+      <MessageSquare key="message" size={48} className="text-ios-teal" />,
+      <Headphones key="headphones" size={48} className="text-ios-teal/70" />,
+      <Users key="users" size={48} className="text-ios-teal/50" />,
     ],
-    gradient: 'from-cyan-500 via-blue-500 to-indigo-600',
+    color: 'ios-teal',
+    bgColor: 'bg-ios-teal/10',
   },
   {
     id: 'content',
@@ -74,11 +77,12 @@ const useCases: UseCase[] = [
       'Automatische Planung',
     ],
     icons: [
-      <PenTool key="pen" size={48} className="text-white/60" />,
-      <FileText key="file" size={48} className="text-white/50" />,
-      <Share2 key="share" size={48} className="text-white/70" />,
+      <PenTool key="pen" size={48} className="text-ios-purple" />,
+      <FileText key="file" size={48} className="text-ios-purple/70" />,
+      <Share2 key="share" size={48} className="text-ios-purple/50" />,
     ],
-    gradient: 'from-violet-500 via-purple-600 to-pink-600',
+    color: 'ios-purple',
+    bgColor: 'bg-ios-purple/10',
   },
 ];
 
@@ -131,21 +135,12 @@ function UseCaseItem({
       {/* Visual Section */}
       <motion.div variants={itemVariants} className="flex-1 w-full">
         <div
-          className={`relative w-full h-[300px] md:h-[400px] rounded-2xl bg-gradient-to-br ${useCase.gradient} overflow-hidden shadow-2xl`}
+          className={`relative w-full h-[300px] md:h-[400px] rounded-3xl ${useCase.bgColor} overflow-hidden shadow-lg shadow-black/5 border border-${useCase.color}/20`}
         >
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl"
-            />
+            <div className={`absolute top-10 right-10 w-32 h-32 bg-${useCase.color}/10 rounded-full`} />
+            <div className={`absolute bottom-10 left-10 w-40 h-40 bg-${useCase.color}/10 rounded-2xl rotate-12`} />
           </div>
 
           {/* Icons arrangement */}
@@ -210,7 +205,7 @@ function UseCaseItem({
           variants={itemVariants}
           className="inline-flex w-fit mb-4"
         >
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${useCase.gradient}`}>
+          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white bg-${useCase.color}`}>
             {useCase.tag}
           </span>
         </motion.div>
@@ -242,8 +237,8 @@ function UseCaseItem({
               variants={itemVariants}
               className="flex items-start gap-3"
             >
-              <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700 font-medium">{feature}</span>
+              <CheckCircle className={`w-6 h-6 text-${useCase.color} flex-shrink-0 mt-0.5`} />
+              <span className="text-neutral-700 font-medium">{feature}</span>
             </motion.li>
           ))}
         </motion.ul>
@@ -273,7 +268,7 @@ export default function UseCases() {
     <section
       id="use-cases"
       ref={sectionRef}
-      className="py-24 md:py-32 bg-white"
+      className="py-24 md:py-32 bg-surface-lavender"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

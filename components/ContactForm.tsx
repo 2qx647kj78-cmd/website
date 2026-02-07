@@ -64,9 +64,9 @@ export default function ContactForm() {
       id="kontakt"
       className="relative min-h-screen py-24 md:py-32 overflow-hidden"
     >
-      {/* Gradient background */}
+      {/* Colorful iOS background */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950/30 to-gray-900 pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-br from-ios-indigo via-ios-purple to-ios-pink pointer-events-none"
         aria-hidden="true"
       />
 
@@ -182,7 +182,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-75"
+                  className="w-full bg-white text-ios-indigo hover:bg-white/90 disabled:bg-neutral-300 disabled:text-neutral-500 font-semibold py-3 px-6 rounded-2xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-75 shadow-lg"
                 >
                   {isLoading ? (
                     <>
@@ -238,7 +238,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 onClick={handleReset}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-200"
+                className="bg-white text-ios-indigo hover:bg-white/90 font-semibold py-3 px-8 rounded-2xl transition-all duration-200 shadow-lg"
               >
                 Weitere Anfrage senden
               </motion.button>

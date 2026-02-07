@@ -51,11 +51,11 @@ const AnimatedCounter = ({ target, label, suffix }: CounterProps) => {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center"
     >
-      <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <div className="text-5xl md:text-6xl font-bold text-ios-blue">
         {count}
         {suffix}
       </div>
-      <p className="text-gray-600 text-lg mt-3">{label}</p>
+      <p className="text-neutral-600 text-lg mt-3">{label}</p>
     </motion.div>
   );
 };
@@ -73,10 +73,10 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true, margin: '-100px' }}
-      className="bg-white rounded-2xl shadow-md p-8 flex flex-col h-full"
+      className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-black/5 p-8 flex flex-col h-full border border-neutral-100"
     >
       <div className="flex mb-4">
-        <Quote className="w-8 h-8 text-blue-600 flex-shrink-0" />
+        <Quote className="w-8 h-8 text-ios-green flex-shrink-0" />
       </div>
 
       <p className="text-gray-700 text-lg leading-relaxed mb-6 flex-grow">
@@ -103,7 +103,7 @@ const TestimonialCard = ({ quote, author, delay }: TestimonialCardProps) => {
 
 export default function SocialProof() {
   return (
-    <section className="bg-muted py-24 md:py-32" style={{ backgroundColor: '#f3f4f6' }}>
+    <section className="bg-surface-mint py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <motion.div

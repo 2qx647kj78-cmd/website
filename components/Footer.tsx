@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-3">
               <h2 className="text-xl font-bold text-white">AI Solutions</h2>
-              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+              <div className="w-2 h-2 rounded-full bg-ios-green"></div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Intelligente Lösungen für moderne Unternehmen

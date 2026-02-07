@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 
   ::selection {
@@ -19,25 +19,13 @@
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  }
-
-  .gradient-bg {
-    background-image: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  }
-
-  .gradient-bg-hover {
-    background-image: linear-gradient(135deg, #2563eb, #7c3aed);
-  }
-
+  /* iOS-style glass effect (very subtle) */
   .glass {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+    @apply bg-white/60 backdrop-blur-md border border-white/40;
   }
 
   .glass-dark {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-black/10 backdrop-blur-md border border-black/5;
   }
 }
 

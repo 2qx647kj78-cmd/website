@@ -11,6 +11,7 @@ interface ServiceCard {
   headline: string;
   description: string;
   features: string[];
+  color: string;
 }
 
 const services: ServiceCard[] = [
@@ -20,6 +21,7 @@ const services: ServiceCard[] = [
     description:
       'Automatisieren Sie repetitive Prozesse mit n8n, Make und Custom AI-Integration. Sparen Sie Zeit und reduzieren Sie Fehler.',
     features: ['n8n Automation', 'Make Integration', 'Custom APIs', 'Zapier Alternative'],
+    color: 'bg-ios-orange',
   },
   {
     icon: <Code className="w-8 h-8" />,
@@ -27,6 +29,7 @@ const services: ServiceCard[] = [
     description:
       'Moderne Websites und Web-Apps mit React, Next.js und AI-Features. Schnell, sicher und skalierbar.',
     features: ['Next.js Apps', 'React Development', 'Responsive Design', 'SEO-optimiert'],
+    color: 'bg-ios-blue',
   },
   {
     icon: <Brain className="w-8 h-8" />,
@@ -34,6 +37,7 @@ const services: ServiceCard[] = [
     description:
       'ChatGPT, Claude & Custom AI-Modelle nahtlos in Ihre bestehenden Systeme integriert.',
     features: ['ChatGPT API', 'Claude Integration', 'Custom Models', 'RAG Systeme'],
+    color: 'bg-ios-purple',
   },
 ];
 
@@ -65,7 +69,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="leistungen" className="py-24 md:py-32 bg-white">
+    <section id="leistungen" className="py-24 md:py-32 bg-surface-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -95,20 +99,20 @@ export default function Services() {
               key={index}
               variants={cardVariants}
               className={cn(
-                'relative bg-white rounded-2xl shadow-lg p-8',
-                'hover:shadow-xl hover:-translate-y-1',
+                'relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-black/5 p-8',
+                'hover:shadow-xl hover:shadow-black/10 hover:-translate-y-2',
                 'transition-all duration-300 ease-out',
-                'border border-gray-100'
+                'border border-neutral-100'
               )}
             >
               {/* Icon Container */}
               <div className="mb-6">
                 <div
                   className={cn(
-                    'w-16 h-16 rounded-xl',
-                    'bg-gradient-to-br from-blue-500 to-purple-600',
+                    'w-16 h-16 rounded-2xl',
+                    service.color,
                     'flex items-center justify-center',
-                    'text-white shadow-lg'
+                    'text-white shadow-lg shadow-black/10'
                   )}
                 >
                   {service.icon}
@@ -132,9 +136,13 @@ export default function Services() {
                     key={featureIndex}
                     className="flex items-center gap-3"
                   >
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className={cn(
+                      "flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center",
+                      service.color,
+                      "bg-opacity-20"
+                    )}>
                       <svg
-                        className="w-3 h-3 text-blue-600"
+                        className={cn("w-4 h-4", service.color.replace('bg-', 'text-'))}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -145,7 +153,7 @@ export default function Services() {
                         />
                       </svg>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-neutral-700">
                       {feature}
                     </span>
                   </div>
